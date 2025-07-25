@@ -41,6 +41,8 @@ then use pip to install required packages:
 pip install -r requirements.txt
 ```
 
+Remember to download the pretrained weights of ViT-Base-Patch16-224 from [here](https://huggingface.co/timm/vit_base_patch16_224.augreg_in1k) and put it in the project root folder.
+
 From now on, you can start FATE training:
 
 ```sh
