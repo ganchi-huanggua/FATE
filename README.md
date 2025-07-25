@@ -1,3 +1,4 @@
+This is the implementation of our ACMMM 2025 paper [FATE](https://arxiv.org/abs/2504.09828)
 Our FATE implementation is based on the awesome SSL framework [USB](https://github.com/microsoft/Semi-supervised-learning)
 <div align="center">
   <a href="https://github.com/microsoft/Semi-supervised-learning">
@@ -41,7 +42,7 @@ then use pip to install required packages:
 pip install -r requirements.txt
 ```
 
-Remember to download the pretrained weights of ViT-Base-Patch16-224 from [here](https://huggingface.co/timm/vit_base_patch16_224.augreg_in1k) and put it in the project root folder.
+Remember to download the pretrained weights of ViT-Base-Patch16-224 from [here](https://huggingface.co/timm/vit_base_patch16_224.augreg_in1k) and put it in proper folder based on the config file.
 
 From now on, you can start FATE training:
 
@@ -50,3 +51,4 @@ python train.py --c config/classic_cv/semipt/semipt_cifar100_1_0.yaml
 ```
 
 The detailed instructions for downloading and processing are shown in [Dataset Download](./preprocess/). Please follow it to download datasets before running or developing algorithms.
+
