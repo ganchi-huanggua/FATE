@@ -1,0 +1,48 @@
+algorithm: semipt
+save_dir: ./saved_models/classic_cv
+save_name: semipt_re_b64_imagenet100_1_0
+resume: True
+load_path: ./saved_models/classic_cv/semipt_re_b64_imagenet100_1_0/latest_model.pth
+overwrite: True
+use_tensorboard: True
+use_wandb: False
+epoch: 60
+num_train_iter: 61440
+num_eval_iter: 1024
+num_log_iter: 256
+num_labels: 100
+batch_size: 64
+eval_batch_size: 128
+hard_label: True
+T: 0.5
+p_cutoff: 0.95  # create a mask to satisfy the usb frame
+ulb_loss_ratio: 99  # 1: 52.11 / 999: 53.93  / 99: 57.97 / 50: 55.58 / 9: 54.17
+uratio: 1  # 7
+ema_m: 0.  # 0.999
+crop_ratio: 0.875
+img_size: 224  # 32
+optim: SGD
+lr: 0.03
+momentum: 0.9
+weight_decay: 0.0005
+layer_decay: 1.0
+amp: False
+clip: 0.0
+use_cat: False
+net: dualpt_on_vit_base_patch_16_224
+net_from_name: False
+data_dir: /home/lhz/data
+dataset: imagenet100
+train_sampler: RandomSampler
+num_classes: 100
+num_workers: 16
+seed: 0
+world_size: 1
+rank: 0
+multiprocessing_distributed: False
+dist_url: tcp://127.0.0.1:10008
+dist_backend: nccl
+gpu: 5
+
+use_pretrain: True
+pretrain_path: /home/lhz/code/Semi-Supervised-Learning/vit_base_patch16_224.augreg2_in21k_ft_in1k/pytorch_model.bin
